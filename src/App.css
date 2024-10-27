@@ -1,7 +1,31 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.app-container {
+  display: grid;
+  grid-template-rows:108px 1fr; /* Header is 60px tall, remaining content fills available space */
+  grid-template-columns: 340px 1fr; /* Sidebar is 200px wide, main content takes remaining width */
+  height: 100vh;
+  gap: 0; /* No gap between grid items */
 }
 
+.header {
+  grid-column: 1 / -1; /* Header spans both columns */
+  grid-row: 1; /* Fixed to the top row */
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 10; /* Ensures header stays above other content */
+}
+
+.sidebar {
+  grid-column: 1; /* Sidebar in the first column */
+  grid-row: 2; /* Sidebar starts below the header */
+  z-index: 5;
+}
+
+.main-content {
+  grid-column: 2; /* Main content in the second column */
+  grid-row: 2; /* Main content starts below the header */
+  padding: 20px;
+  overflow-y: auto; /* Allows scrolling if content overflows */
+}
