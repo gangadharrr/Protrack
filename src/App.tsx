@@ -1,9 +1,10 @@
 import './App.css'
+import HomeScreen from './pages/HomeScreen'
 
 function App() {
   return (
     <>
-      <p>Hello World</p>
+     <HomeScreen />
     </>
   )
 }
